@@ -1,0 +1,5 @@
+MOTD="Welcome to Pascals Server"
+MAX_PLAYERS=15
+GAMEMODE=creative
+DIFFICULTY=easy
+ONLINE_MODE=true

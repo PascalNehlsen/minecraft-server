@@ -1,0 +1,13 @@
+services:
+  mc-server:
+    build: .
+    container_name: minecraft-server
+    ports:
+      - 8888:25565
+    env_file:
+      - .env
+    volumes:
+      - ./server:/app
+    restart: unless-stopped
+volumes:
+  server:
