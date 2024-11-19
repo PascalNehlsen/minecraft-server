@@ -1,5 +1,7 @@
 # Minecraft Server with Docker Compose
 
+Welcome to your personal Minecraft Server! This repository contains a Minecraft Server configuration. The project uses Docker compose to containerize the application and deploy it to a virtual machine (VM).
+
 ## Table of Contents
 
 1. [Description](#description)
@@ -38,7 +40,7 @@ If not, [visit official Docker Docs](https://docs.docker.com/compose/install/) t
 3. Build the Docker image and Start the Minecraft server container:
 
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
 4. Access your Minecraft server:
@@ -48,12 +50,12 @@ If not, [visit official Docker Docs](https://docs.docker.com/compose/install/) t
 5. To stop the server, run:
 
    ```bash
-   docker-compose down
+   docker compose down
    ```
 
 ## Configuration
 
-Here are the available environment variables you can configure in the [.example_env](./.example_env) file:
+Here are the available environment variables you can configure in the [example.env](./example.env) file:
 
 - `MAX_PLAYERS`: The maximum number of players allowed on the server. Default: `10`.
 - `MOTD`: The "Message of the Day" that players see when they join the server.
