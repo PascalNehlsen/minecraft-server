@@ -1,28 +1,35 @@
 # Minecraft Server with Docker Compose
 
-Welcome to your personal Minecraft Server! This repository contains a Minecraft Server configuration. The project uses Docker compose to containerize the application and deploy it to a virtual machine (VM).
+Welcome to your personal Minecraft Server! This repository provides an easy-to-use setup for running a customizable Minecraft server using Docker Compose. Deploy it locally or to a virtual machine (VM) with minimal effort.
 
 ## Table of Contents
 
 1. [Description](#description)
 2. [Quickstart](#quickstart)
-3. [Configuration](#configuration)
+3. [Usage](#usage)
+   - [Configuration](#configuration)
 4. [Contact](#contact)
 
 ## Description
 
-This repository contains a Docker setup for running a Minecraft server using Docker Compose. The setup provides a simple and efficient way to launch and manage a Minecraft server with customizable configurations, such as memory allocation, maximum players, and more.
+This repository offers a Docker Compose configuration for hosting a Minecraft server. The setup simplifies launching, managing, and customizing a Minecraft server.
+
+Key features:
+
+- **Containerized Deployment**: Run your server reliably using Docker.
+
+- **Customizable Settings**: Adjust memory allocation, player limits, game modes, and more.
+
+- **Easy Maintenance**: Start, stop, and update your server with minimal effort.
+
+## Quickstart
 
 ### Prerequisites
 
-To use this repository, you need to have the following installed:
+Ensure you have the following tools installed:
 
 - [Docker](https://www.docker.com/products/docker-desktop)
-
-Docker Compose has been integrated into Docker as a plugin as of Docker version 20.10.
-If not, [visit official Docker Docs](https://docs.docker.com/compose/install/) to install Docker compose manually.
-
-## Quickstart
+  - Docker Compose is included with Docker 20.10 and later. If you have an older version, follow the [official instructions](https://docs.docker.com/compose/install/) to install Docker Compose as a plugin.
 
 1. Clone this repository:
 
@@ -31,37 +38,41 @@ If not, [visit official Docker Docs](https://docs.docker.com/compose/install/) t
    cd minecraft-server
    ```
 
-2. Copy the content of the example env file into a .env file:
+2. Create a `.env` file from the example configuration:
 
    ```bash
    cp example_env .env
    ```
 
-3. Build the Docker image and Start the Minecraft server container:
+3. Build and start the server container:
 
    ```bash
    docker compose up --build
    ```
 
-4. Access your Minecraft server:
+4. Open Minecraft and connect to the server:
 
-   - Open Minecraft and connect to `localhost:8888` (or use your server's IP if hosted remotely).
+   - Local server: `localhost:8888` (or use your server's IP if hosted remotely).
 
-5. To stop the server, run:
+5. To stop the server, use:
 
    ```bash
    docker compose down
    ```
 
-## Configuration
+## Usage
 
-Here are the available environment variables you can configure in the [example.env](./example.env) file:
+### Configuration
 
-- `MAX_PLAYERS`: The maximum number of players allowed on the server. Default: `10`.
-- `MOTD`: The "Message of the Day" that players see when they join the server.
-- `DIFFICULTY`: The difficulty level for the server. Default:`normal` | Options: `easy`, `normal`, `hard`.
-- `GAMEMODE`: The default game mode for players when they join. Default:`survival` | Options: `survival`, `creative`, `adventure`, `spectator`.
-- `ONLINE_MODE`: Whether the server should authenticate players using Minecraft’s online services. Default: `true`.
+The server settings can be customized in the [example.env](./example.env) file. Below are the key environment variables you can modify:
+
+| Option        | Description                                             | Default value | Options                                  |
+| ------------- | ------------------------------------------------------- | ------------- | ---------------------------------------- |
+| `MAX_PLAYERS` | Maximum number of players allowed on the server.        | 15            | Any integer value                        |
+| `MOTD`        | Message of the Day displayed to players upon joining.   | -             | Any text                                 |
+| `DIFFICULTY`  | Difficulty level of the server.                         | easy          | easy, normal, hard                       |
+| `GAMEMODE`    | Default game mode for players.                          | creative      | survival, creative, adventure, spectator |
+| `ONLINE_MODE` | Authenticate players using Minecraft's online services. | true          | true, false                              |
 
 ## Contact
 

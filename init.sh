@@ -53,4 +53,4 @@ fi
 
 # Start the Minecraft server
 echo "Starting the Minecraft server..."
-exec java -jar "${SERVER_DIR}/server.jar" nogui
+exec java -Xmx${MEMORY:-2G} -Xms${MEMORY:-1G} -jar "${SERVER_DIR}/server.jar" nogui
