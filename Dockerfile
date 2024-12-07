@@ -6,7 +6,8 @@ WORKDIR /server
 
 # Copy server files and make init.sh executable in one step
 COPY server/server.jar init.sh ${WORKDIR}/
-COPY .env $WORKDIR/server.properties
+COPY example.env $WORKDIR/server.properties
+
 RUN chmod +x init.sh
 
 # Expose the default Minecraft server port
