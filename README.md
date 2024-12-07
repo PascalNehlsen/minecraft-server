@@ -17,9 +17,7 @@ This repository offers a Docker Compose configuration for hosting a Minecraft se
 Key features:
 
 - **Containerized Deployment**: Run your server reliably using Docker.
-
 - **Customizable Settings**: Adjust memory allocation, player limits, game modes, and more.
-
 - **Easy Maintenance**: Start, stop, and update your server with minimal effort.
 
 ## Quickstart
@@ -41,7 +39,7 @@ Ensure you have the following tools installed:
 2. Create a `.env` file from the example configuration:
 
    ```bash
-   cp example_env .env
+   cp example.env .env
    ```
 
 3. Build and start the server container:
@@ -66,7 +64,7 @@ Ensure you have the following tools installed:
 
 The server settings can be customized in the [example.env](./example.env) file. Below are the key environment variables you can modify:
 
-| Option        | Description                                             | Default value | Options                                  |
+| Variable      | Description                                             | Default value | Possible Values                          |
 | ------------- | ------------------------------------------------------- | ------------- | ---------------------------------------- |
 | `MAX_PLAYERS` | Maximum number of players allowed on the server.        | 15            | Any integer value                        |
 | `MOTD`        | Message of the Day displayed to players upon joining.   | -             | Any text                                 |

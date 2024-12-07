@@ -5,11 +5,9 @@ FROM openjdk:21-jdk-slim
 WORKDIR /server
 
 # Copy server files and make init.sh executable in one step
-COPY server/server.jar init.sh .env ${WORKDIR}/
+COPY server/server.jar init.sh ${WORKDIR}/
+COPY .env $WORKDIR/server.properties
 RUN chmod +x init.sh
-
-# Set environment variables (optional, or could be set in the .env file)
-ENV EULA=TRUE
 
 # Expose the default Minecraft server port
 EXPOSE 25565

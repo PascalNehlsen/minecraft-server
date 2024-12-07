@@ -1,13 +1,16 @@
 services:
   mc-server:
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     container_name: minecraft-server
     ports:
       - 8888:25565
     env_file:
       - .env
     volumes:
-      - ./server:/app
+      - mc-server:/server
     restart: unless-stopped
+
 volumes:
-  server:
+  mc-server:

@@ -6,16 +6,6 @@ SERVER_DIR="/server"
 # Exit immediately if any command fails
 set -o errexit
 
-# Load the .env file if it exists
-if [ -f "${SERVER_DIR}/.env" ]; then
-    echo "Loading environment variables from .env file..."
-    set -a
-    source "${SERVER_DIR}/.env"
-    set +a
-else
-    echo ".env file not found, using default values"
-fi
-
 # Check if Java is installed
 if ! command -v java &> /dev/null; then
     echo "Java could not be found! Please install Java."
